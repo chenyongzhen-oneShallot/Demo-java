@@ -11,9 +11,9 @@ public class ReadFile{
             String encoding = "utf-8";
             File file = new File(filePath);
             if (file.isFile() && file.exists()) {
-                FileInputStream in = new FileInputStream(file);
-                InputStreamReader read = new InputStreamReader(in, encoding);
-                BufferedReader txt = new BufferedReader(read);
+                FileInputStream in = new FileInputStream(file);//把文件的内容以字节流的方式读取并存在内存中
+                InputStreamReader read = new InputStreamReader(in, encoding);//将内存中字节流转化为字符流解读
+                BufferedReader txt = new BufferedReader(read);//将字符流转化为IO可识别的数据
                 String line = null;
                 while ((line = txt.readLine()) != null) {
                     System.out.println(line);
